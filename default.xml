@@ -15,7 +15,7 @@
 
   <project path="kernel/rpi" name="kernel_rpi" revision="vc4" remote="peyo"/>
   <project path="hardware/rpi" name="hardware_rpi" revision="master" remote="peyo"/>
-  <project path="device/brcm/rpi3" name="device_brcm_rpi3" revision="marshmallow" remote="peyo"/>
+  <project path="device/brcm/rpi3" name="device_brcm_rpi3" revision="npv" remote="peyo"/>
   <project path="device/brcm/rpi2" name="device_brcm_rpi2" revision="marshmallow" remote="peyo"/>
 
 </manifest>
