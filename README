@@ -8,6 +8,9 @@
 # Patch art build by using correct prebuilt
 http://review.cyanogenmod.org/#/c/120824/2/build/Android.common_build.mk
 
+# Use oracle-jdk-bin-1.8
+eselect java-vm set user 2
+
 # mod wpa.te
 #allow wpa self:netlink_generic_socket create_socket_perms;
 
