@@ -9,6 +9,8 @@
 http://review.cyanogenmod.org/#/c/120824/2/build/Android.common_build.mk
 
 # mod wpa.te
+#allow wpa self:netlink_generic_socket create_socket_perms;
+
 allow wpa persist_file:dir search;
 qmux_socket(wpa);
 
