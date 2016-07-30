@@ -5,5 +5,22 @@
  $ git clone https://github.com/lucatib/local_manifests -b marshmallow
  $ repo sync
 
+# Patch art build by using correct prebuilt
+http://review.cyanogenmod.org/#/c/120824/2/build/Android.common_build.mk
+
+# mod wpa.te
+allow wpa persist_file:dir search;
+qmux_socket(wpa);
+
+allow wpa self:socket create_socket_perms;
+allow wpa smem_log_device:chr_file rw_file_perms;
+allow wpa proc_net:file write;
+
+# Permission for wpa socket which IMS use to communicate
+# Allow wpa_supplicant to send back wifi information to cnd
+allow wpa { cnd ims }:unix_dgram_socket sendto;
+
+allow wpa fstman:unix_dgram_socket sendto;
+
 # Build for RaspberryPi 3
  See https://github.com/peyo-hd/device_brcm_rpi3
