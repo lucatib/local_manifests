@@ -17,5 +17,12 @@ eselect java-vm set user 2
 allow wpa self:socket create_socket_perms;
 allow wpa proc_net:file write;
 
+# Build Kernel
+ Install gcc-arm-linux-gnueabihf
+ $ cd kernel/rpi
+ $ ARCH=arm scripts/kconfig/merge_config.sh arch/arm/configs/bcm2709_defconfig android/configs/android-base.cfg android/configs/android-recommended.cfg arch/arm/configs/multi_v7_defconfig
+ $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make zImage
+ $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make dtbs
+ 
 # Build for RaspberryPi 3
  See https://github.com/peyo-hd/device_brcm_rpi3
