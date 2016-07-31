@@ -1,15 +1,12 @@
 # Download Android source with patches(local_manifests)
- Refer to http://source.android.com/source/downloading.html
- $ repo init -u https://android.googlesource.com/platform/manifest -b android-6.0.1_r55
- $ cd .repo
- $ git clone https://github.com/lucatib/local_manifests -b marshmallow
- $ repo sync
+# Refer to http://source.android.com/source/downloading.html
+repo init -u https://android.googlesource.com/platform/manifest -b android-6.0.1_r55
+cd .repo
+git clone https://github.com/lucatib/local_manifests -b marshmallow
+repo sync
 
 # Patch art build by using correct prebuilt
 http://review.cyanogenmod.org/#/c/120824/2/build/Android.common_build.mk
-
-# Use oracle-jdk-bin-1.8
-eselect java-vm set user 2
 
 # mod wpa.te
 #allow wpa self:netlink_generic_socket create_socket_perms;
@@ -18,14 +15,15 @@ allow wpa self:socket create_socket_perms;
 allow wpa proc_net:file write;
 
 # Build Kernel
- Install gcc-arm-linux-gnueabihf
- $ cd kernel/rpi
- $ ARCH=arm scripts/kconfig/merge_config.sh arch/arm/configs/bcm2709_defconfig android/configs/android-base.cfg android/configs/android-recommended.cfg arch/arm/configs/multi_v7_defconfig
- $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make zImage -j10
- $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make dtbs -j10
+# Install gcc-arm-linux-gnueabihf
+cd kernel/rpi
+ARCH=arm scripts/kconfig/merge_config.sh arch/arm/configs/bcm2709_defconfig android/configs/android-base.cfg android/configs/android-recommended.cfg arch/arm/configs/multi_v7_defconfig
+ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make zImage -j10
+ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make dtbs -j10
  
 # Build system
-
+eselect java-vm set user 2
+export EXPERIMENTAL_USE_JAVA8=true
 
 # SD card && copy data
 mkfs.vfat /dev/sdc1 -n BOOT
