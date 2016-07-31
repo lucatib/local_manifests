@@ -24,5 +24,22 @@ allow wpa proc_net:file write;
  $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make zImage
  $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make dtbs
  
+# Build system
+
+
+# SD card && copy data
+mkfs.vfat /dev/sdc1 -n BOOT
+mkfs.ext4 /dev/sdc1 -L system
+mkfs.ext4 /dev/sdc4 -L data
+mkfs.ext4 /dev/sdc3 -L cache
+
+cp device/brcm/rpi3/boot/* /run/media/user/BOOT/
+cp kernel/rpi/arch/arm/boot/zImage /run/media/user/BOOT/
+cp out/target/product/rpi3/ramdisk.img /run/media/user/BOOT/
+cp kernel/rpi/arch/arm/boot/dts/bcm2710-rpi-3-b.dtb /run/media/user/BOOT/
+cp kernel/rpi/arch/arm/boot/dts/overlays/vc4-kms-v3d.dtbo /run/media/user/BOOT/overlays/
+
+dd if=out/target/product/rpi3/system.img of=/dev/sdc2 bs=10M
+
 # Build for RaspberryPi 3
  See https://github.com/peyo-hd/device_brcm_rpi3
