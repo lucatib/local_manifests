@@ -21,8 +21,8 @@ allow wpa proc_net:file write;
  Install gcc-arm-linux-gnueabihf
  $ cd kernel/rpi
  $ ARCH=arm scripts/kconfig/merge_config.sh arch/arm/configs/bcm2709_defconfig android/configs/android-base.cfg android/configs/android-recommended.cfg arch/arm/configs/multi_v7_defconfig
- $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make zImage
- $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make dtbs
+ $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make zImage -j10
+ $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make dtbs -j10
  
 # Build system
 
