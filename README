@@ -8,12 +8,6 @@ repo sync
 # Patch art build by using correct prebuilt
 http://review.cyanogenmod.org/#/c/120824/2/build/Android.common_build.mk
 
-# mod wpa.te
-#allow wpa self:netlink_generic_socket create_socket_perms;
-
-allow wpa self:socket create_socket_perms;
-allow wpa proc_net:file write;
-
 # Build Kernel
 # Install gcc-arm-linux-gnueabihf
 cd kernel/rpi
