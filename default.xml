@@ -14,11 +14,11 @@
   <remove-project name="platform/external/mesa3d"/>
   <remove-project name="platform/external/drm_gralloc"/>
   <remove-project name="platform/external/drm_hwcomposer"/>
-  <remove-project name="platform/bionic"/>
+  <!--remove-project name="platform/bionic"/-->
   <remove-project name="platform/external/libdrm"/>
-  <remove-project name="platform/frameworks/av"/>
-  <remove-project name="platform/frameworks/base"/> 
-  <remove-project name="platform/frameworks/native"/>
+  <!--remove-project name="platform/frameworks/av"/-->
+  <!--remove-project name="platform/frameworks/base"/--> 
+  <!--remove-project name="platform/frameworks/native"/-->
   <remove-project name="platform/packages/apps/Settings"/>
   <remove-project name="platform/build"/>
   
@@ -26,7 +26,7 @@
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   
-  <project path="bionic" name="android_bionic" revision="android-6.0" remote="ARPi3" />
+  <!--project path="bionic" name="android_bionic" revision="android-6.0" remote="ARPi3" /-->
   <project path="device/brcm/rpi3" name="android_device_brcm_rpi3" revision="android-6.0" remote="ARPi3" >
     <copyfile dest="install.sh" src="install.sh" />
   </project>
@@ -36,9 +36,9 @@
   <project path="external/drm_hwcomposer" name="external_drm_hwcomposer" revision="vc4_master" remote="peyo" />
   <project path="external/libdrm" name="android_external_libdrm" revision="android-6.0" remote="ARPi3" />
   <project path="external/mesa3d" name="android_external_mesa3d" revision="android-6.0" remote="ARPi3" />
-  <project path="frameworks/av" name="android_frameworks_av" revision="android-6.0" remote="ARPi3" />
-  <project path="frameworks/base" name="android_frameworks_base" revision="android-6.0" remote="ARPi3" />  
-  <project path="frameworks/native" name="android_frameworks_native" revision="android-6.0" remote="ARPi3" />
+  <!--project path="frameworks/av" name="android_frameworks_av" revision="android-6.0" remote="ARPi3" /-->
+  <!--project path="frameworks/base" name="android_frameworks_base" revision="android-6.0" remote="ARPi3" /-->  
+  <!--project path="frameworks/native" name="android_frameworks_native" revision="android-6.0" remote="ARPi3" /-->
   <project path="hardware/rpi" name="hardware_rpi" revision="npv" remote="peyo" />
   <project path="kernel/rpi3" name="android_kernel_rpi3" revision="rpi3-4.4" remote="ARPi3" />
   <project path="packages/apps/AudioFX" name="android_packages_apps_AudioFX" revision="cm-13.0" remote="ARPi3" />
