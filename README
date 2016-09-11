@@ -10,6 +10,9 @@ http://review.cyanogenmod.org/#/c/120824/2/build/Android.common_build.mk
 
 # Build Kernel
 # Install gcc-arm-linux-gnueabihf
+crossdev  --gcc =5.4.0 --libc =2.23-r2 --genv 'USE="-fortran -mudflap -nls -openmp multilib" EXTRA_ECONF="--with-float=hard"' -t arm-linux-gnueabihf
+(locale-gen) per ricostruire makeinfo
+
 cd kernel/rpi
 ARCH=arm scripts/kconfig/merge_config.sh arch/arm/configs/bcm2709_defconfig android/configs/android-base.cfg android/configs/android-recommended.cfg arch/arm/configs/multi_v7_defconfig
 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make zImage -j10
