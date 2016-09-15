@@ -24,9 +24,9 @@ export EXPERIMENTAL_USE_JAVA8=true
 
 # SD card && copy data
 mkfs.vfat /dev/sdc1 -n BOOT
-mkfs.ext4 /dev/sdc1 -L system
-mkfs.ext4 /dev/sdc4 -L data
+mkfs.ext4 /dev/sdc2 -L system
 mkfs.ext4 /dev/sdc3 -L cache
+mkfs.ext4 /dev/sdc4 -L data
 
 cp device/brcm/rpi3/boot/* /run/media/user/BOOT/
 cp kernel/rpi/arch/arm/boot/zImage /run/media/user/BOOT/
