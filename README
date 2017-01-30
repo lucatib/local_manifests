@@ -1,6 +1,7 @@
 # Download Android source with patches(local_manifests)
 # Refer to http://source.android.com/source/downloading.html
-repo init -u https://android.googlesource.com/platform/manifest -b android-6.0.1_r63
+repo init -u https://android.googlesource.com/platform/manifest -b android-7.1.1_r12
+
 cd .repo
 git clone https://github.com/lucatib/rpi3_local_manifests -b marshmallow
 repo sync
