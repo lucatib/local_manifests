@@ -3,7 +3,7 @@
 repo init -u https://android.googlesource.com/platform/manifest -b android-7.1.1_r12
 
 cd .repo
-git clone https://github.com/lucatib/rpi3_local_manifests -b nougat
+git clone https://github.com/lucatib/local_manifests_rpi3 -b nougat
 repo sync
 
 # Patch art build by using correct prebuilt
