@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote name="arpi" fetch="https://github.com/android-rpi"/>
-
+  <remote name="lineageos" fetch="https://github.com/LineageOS"/>
+  
   <remove-project name="platform/external/mesa3d"/>
   <project path="external/mesa3d" name="external_mesa3d" revision="nougat" remote="arpi"/>
   <remove-project name="platform/external/drm_gralloc"/>
@@ -13,7 +12,7 @@
   <project path="hardware/rpi" name="hardware_rpi" revision="nougat" remote="arpi"/>
   <project path="device/brcm/rpi3" name="device_brcm_rpi3" revision="nougat" remote="arpi"/>
 
-  <project path="external/busybox" name="android_external_busybox" revision="android-6.0" remote="ARPi3" />
+  <project path="external/busybox" name="android_external_busybox" revision="master" remote="lineageos" />
   <!--project path="packages/apps/AudioFX" name="android_packages_apps_AudioFX" revision="cm-13.0" remote="ARPi3" />
   <project path="packages/apps/Eleven" name="android_packages_apps_Eleven" revision="cm-13.0" remote="ARPi3" /-->
 
