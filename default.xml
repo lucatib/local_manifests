@@ -1,49 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-
-  <remote  name="ARPi3"
-           fetch="https://github.com/Android-RPi3"
-           revision="android-6.0" />
-
-  <!--remote  name="linaro"
-           fetch="git://android.git.linaro.org" /-->
-
-  <remote  name="peyo"
-           fetch="https://github.com/peyo-hd" />
+  <remote name="arpi" fetch="https://github.com/android-rpi"/>
 
   <remove-project name="platform/external/mesa3d"/>
+  <project path="external/mesa3d" name="external_mesa3d" revision="nougat" remote="arpi"/>
   <remove-project name="platform/external/drm_gralloc"/>
-  <remove-project name="platform/external/drm_hwcomposer"/>
-  <!--remove-project name="platform/bionic"/-->
-  <remove-project name="platform/external/libdrm"/>
-  <!--remove-project name="platform/frameworks/av"/-->
-  <!--remove-project name="platform/frameworks/base"/--> 
-  <!--remove-project name="platform/frameworks/native"/-->
-  <!--remove-project name="platform/packages/apps/Settings"/-->
-  <remove-project name="platform/build"/>
-  
-  <project path="build" name="android_build" revision="android-6.0" remote="ARPi3" >
-    <copyfile src="core/root.mk" dest="Makefile" />
-  </project>
-  
-  <!--project path="bionic" name="android_bionic" revision="android-6.0" remote="ARPi3" /-->
-  <project path="device/brcm/rpi3" name="android_device_brcm_rpi3" revision="android-6.0" remote="ARPi3" >
-    <copyfile dest="install.sh" src="install.sh" />
-  </project>
-  
+  <project path="external/drm_gralloc" name="external_drm_gralloc" revision="nougat" remote="arpi"/>
+
+  <project path="kernel/rpi" name="kernel_rpi" revision="nougat" remote="arpi"/>
+  <project path="hardware/rpi" name="hardware_rpi" revision="nougat" remote="arpi"/>
+  <project path="device/brcm/rpi3" name="device_brcm_rpi3" revision="nougat" remote="arpi"/>
+
   <project path="external/busybox" name="android_external_busybox" revision="android-6.0" remote="ARPi3" />
-  <project path="external/drm_gralloc" name="external_drm_gralloc" revision="vc4_master" remote="peyo" />
-  <project path="external/drm_hwcomposer" name="external_drm_hwcomposer" revision="vc4_master" remote="peyo" />
-  <project path="external/libdrm" name="android_external_libdrm" revision="android-6.0" remote="ARPi3" />
-  <project path="external/mesa3d" name="android_external_mesa3d" revision="android-6.0" remote="ARPi3" />
-  <!--project path="frameworks/av" name="android_frameworks_av" revision="android-6.0" remote="ARPi3" /-->
-  <!--project path="frameworks/base" name="android_frameworks_base" revision="android-6.0" remote="ARPi3" /-->  
-  <!--project path="frameworks/native" name="android_frameworks_native" revision="android-6.0" remote="ARPi3" /-->
-  <project path="hardware/rpi" name="hardware_rpi" revision="npv" remote="peyo" />
-  <project path="kernel/rpi3" name="android_kernel_rpi3" revision="rpi3-4.4" remote="ARPi3" />
-  <project path="packages/apps/AudioFX" name="android_packages_apps_AudioFX" revision="cm-13.0" remote="ARPi3" />
-  <project path="packages/apps/Eleven" name="android_packages_apps_Eleven" revision="cm-13.0" remote="ARPi3" />
-  <!--project path="packages/apps/Settings" name="android_packages_apps_Settings" revision="android-6.0" remote="ARPi3" /-->
-  <!--project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-5.3-linaro" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-5.3-linaro" remote="linaro" revision="master" /-->
-  
+  <!--project path="packages/apps/AudioFX" name="android_packages_apps_AudioFX" revision="cm-13.0" remote="ARPi3" />
+  <project path="packages/apps/Eleven" name="android_packages_apps_Eleven" revision="cm-13.0" remote="ARPi3" /-->
+
+  <remove-project name="device/google/dragon-kernel" />
+  <remove-project name="device/htc/flounder-kernel" />
+  <remove-project name="device/huawei/angler-kernel" />
+  <remove-project name="device/lge/bullhead-kernel" />
+  <remove-project name="device/linaro/hikey-kernel" />
+  <remove-project name="device/asus/fugu-kernel" />
+  <remove-project name="device/moto/shamu-kernel" />
 </manifest>
