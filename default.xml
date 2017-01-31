@@ -13,6 +13,7 @@
   <project path="device/brcm/rpi3" name="device_brcm_rpi3" revision="nougat" remote="arpi"/>
 
   <project path="external/busybox" name="android_external_busybox" revision="master" remote="lineageos" />
+  <project path="external/clearsilver" name="platform/external/clearsilver" revision="master"/>
   <!--project path="packages/apps/AudioFX" name="android_packages_apps_AudioFX" revision="cm-13.0" remote="ARPi3" />
   <project path="packages/apps/Eleven" name="android_packages_apps_Eleven" revision="cm-13.0" remote="ARPi3" /-->
 
